@@ -1,7 +1,7 @@
 source :rubygems
 
-# PostgreSQL driver
-gem 'pg'
+# MongoDB driver
+gem 'mongo'
 
 # Sinatra driver
 gem 'sinatra'
