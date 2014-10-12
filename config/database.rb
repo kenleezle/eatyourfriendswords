@@ -23,7 +23,7 @@ end
 
 # Heroku controls what database we connect to by setting the DATABASE_URL environment variable
 # We need to respect that if we want our Sinatra apps to run on Heroku without modification
-db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{APP_NAME}_#{Sinatra::Application.environment}")
+db = URI.parse(ENV['DATABASE_URL'] || "mongo://localhost/#{APP_NAME}_#{Sinatra::Application.environment}")
 
 DB_NAME = db.path[1..-1]
 
@@ -33,7 +33,7 @@ DB_NAME = db.path[1..-1]
 #   to :development
 
 ActiveRecord::Base.establish_connection(
-  :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+  :adapter  => db.scheme == 'mongo' ? 'mongo' : db.scheme,
   :host     => db.host,
   :port     => db.port,
   :username => db.user,
