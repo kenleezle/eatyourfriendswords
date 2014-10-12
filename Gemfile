@@ -2,6 +2,7 @@ source :rubygems
 
 # MongoDB driver
 gem 'mongo'
+gem 'bson_ext'
 
 # Sinatra driver
 gem 'sinatra'
@@ -16,6 +17,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'activerecord-alt-mongo-adapter'
 
 group :test do
   gem 'faker'
